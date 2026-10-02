@@ -28,6 +28,9 @@ jobs:
 
       - run: npm ci
 
+      # Fails the deploy if a test fails or coverage drops below 90%.
+      - run: npm run test:coverage
+
       # Runs `tsc -b && vite build`, so a type error fails the deploy.
       - run: npm run build
 
